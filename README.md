@@ -64,5 +64,5 @@ BMP image file for testing
 This project demonstrates how to implement basic steganography using C++ and bit manipulation. While it's a simple LSB technique, the project lays the foundation for more advanced steganography and cryptography techniques.
 ## References
 [C++ Documentation](https://cplusplus.com/)  
-[Bit Manipulation in C++](https://www.geeksforgeeks.org/bit-manipulation-in-c/)  
+[Bit Manipulation in C++](https://www.geeksforgeeks.org/bits-manipulation-important-tactics/)  
 [Steganography - Wikipedia](https://en.wikipedia.org/wiki/Steganography)  
