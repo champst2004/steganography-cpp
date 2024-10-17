@@ -55,14 +55,14 @@ Message encoded in output.bmp
 The message in the image is: Hello, World!
 ```
 ## Requirements
-C++11 or higher
-Any C++ compiler (e.g., g++, clang++)
-BMP image file for testing
+C++11 or higher  
+Any C++ compiler (e.g., g++, clang++)  
+BMP image file for testing  
 ## Screenshots
 
 ## Conclusion
 This project demonstrates how to implement basic steganography using C++ and bit manipulation. While it's a simple LSB technique, the project lays the foundation for more advanced steganography and cryptography techniques.
 ## References
-[C++ Documentation](https://cplusplus.com/)
-[Bit Manipulation in C++](https://www.geeksforgeeks.org/bit-manipulation-in-c/)
-[Steganography - Wikipedia](https://en.wikipedia.org/wiki/Steganography)
+[C++ Documentation](https://cplusplus.com/)  
+[Bit Manipulation in C++](https://www.geeksforgeeks.org/bit-manipulation-in-c/)  
+[Steganography - Wikipedia](https://en.wikipedia.org/wiki/Steganography)  
