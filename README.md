@@ -59,7 +59,7 @@ C++11 or higher
 Any C++ compiler (e.g., g++, clang++)  
 BMP image file for testing  
 ## Screenshots
-
+![Screenshot](./docs/screenshot.png)
 ## Conclusion
 This project demonstrates how to implement basic steganography using C++ and bit manipulation. While it's a simple LSB technique, the project lays the foundation for more advanced steganography and cryptography techniques.
 ## References
