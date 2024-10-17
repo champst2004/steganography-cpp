@@ -5,7 +5,6 @@ A simple project that demonstrates how to hide and extract secret messages withi
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Project Structure](#project-structure)
 - [How it Works](#how-it-works)
 - [Usage](#usage)
 - [Requirements](#requirements)
@@ -20,9 +19,6 @@ This project is a basic steganography implementation using the Least Significant
 - **Encode Messages in Images**: Hides secret messages within the pixel data of BMP files.
 - **Decode Messages from Images**: Extracts hidden messages from modified BMP files.
 - **Simple Console-Based Interface**: Users can choose to encode or decode messages through simple terminal commands.
-
-## Project Structure
-
 
 ## How it Works
 The project manipulates the least significant bit (LSB) of each byte in the BMP image file. This process is used to encode a message by converting it into binary and embedding it in the image. During decoding, the program reads the LSBs to reconstruct the original message.
@@ -58,6 +54,12 @@ Message encoded in output.bmp
 2. Decode
 The message in the image is: Hello, World!
 ```
+## Requirements
+C++11 or higher
+Any C++ compiler (e.g., g++, clang++)
+BMP image file for testing
+## Screenshots
+
 ## Conclusion
 This project demonstrates how to implement basic steganography using C++ and bit manipulation. While it's a simple LSB technique, the project lays the foundation for more advanced steganography and cryptography techniques.
 ## References
