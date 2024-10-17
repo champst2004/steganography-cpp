@@ -42,8 +42,8 @@ g++ main.cpp -o steganography
 ./steganography
 ```
 ### 4. Follow the On-Screen Prompts
-Encode: Enter the message you want to hide in the image.
-Decode: Extract the hidden message from the encoded image.
+Encode: Enter the message you want to hide in the image.  
+Decode: Extract the hidden message from the encoded image.  
 ### 5. Example
 ```bash
 1. Encode
