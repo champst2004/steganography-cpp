@@ -34,8 +34,33 @@ The project manipulates the least significant bit (LSB) of each byte in the BMP 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/steganography-cpp.git
+git clone https://github.com/champst2004/steganography-cpp.git
 cd steganography-cpp
 ```
 ### 2. Compile the Program
+```bash
 g++ main.cpp -o steganography
+```
+### 3. Run the Program
+```bash
+./steganography
+```
+### 4. Follow the On-Screen Prompts
+Encode: Enter the message you want to hide in the image.
+Decode: Extract the hidden message from the encoded image.
+### 5. Example
+```bash
+1. Encode
+Enter the message: Hello, World!
+Message encoded in output.bmp
+```
+```bash
+2. Decode
+The message in the image is: Hello, World!
+```
+## Conclusion
+This project demonstrates how to implement basic steganography using C++ and bit manipulation. While it's a simple LSB technique, the project lays the foundation for more advanced steganography and cryptography techniques.
+## References
+[C++ Documentation](https://cplusplus.com/)
+[Bit Manipulation in C++](https://www.geeksforgeeks.org/bit-manipulation-in-c/)
+[Steganography - Wikipedia](https://en.wikipedia.org/wiki/Steganography)
