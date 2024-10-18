@@ -101,7 +101,7 @@ int main() {
                 printf("Thank you!\n");
                 break;
             default:
-                cout << "Invalid choice" << endl;
+                cout << "Invalid choice!" << endl;
         }
     } while(choice != 3);
     return 0;
