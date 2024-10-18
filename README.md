@@ -35,7 +35,7 @@ cd steganography-cpp
 ```
 ### 2. Compile the Program
 ```bash
-g++ main.cpp -o steganography
+g++ project_main.cpp -o steganography
 ```
 ### 3. Run the Program
 ```bash
