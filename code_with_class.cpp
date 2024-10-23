@@ -1,3 +1,9 @@
+//Use the concepts of OOP
+
+//Edit the code to make logs on every ruk
+
+//Ask for imput/output file name everytime
+
 #include <iostream>
 #include <fstream>
 #include <bitset>
