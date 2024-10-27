@@ -1,5 +1,2 @@
-output.bmp
 *.exe
 temp.cpp
-images/inputs/*.bmp
-images/outputs/*.bmp
