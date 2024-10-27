@@ -1,14 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <bitset>
-#include <cstring>
 using namespace std;
 
 class BitManip {
 public:
     string imageFile = "images/inputs/";
     string outputFile = "images/outputs/";
-
+    string ext = ".bmp";
     void setLSB(char &byte, int bit) {
         byte = (byte & 0xFE) | (bit & 1);
     }
@@ -18,7 +17,7 @@ public:
     }
 };
 
-class Stegano : public BitManip {
+class Steganography : public BitManip {
 public:
     void encodeMessage(const string &message){
         string in;
@@ -28,8 +27,8 @@ public:
         cout << "Enter output file name: ";
         getline(cin, out);
 
-        ifstream image(imageFile + in, ios::binary);
-        ofstream output(outputFile + out, ios::binary);
+        ifstream image(imageFile + in + ext, ios::binary);
+        ofstream output(outputFile + out + ext, ios::binary);
 
         if (!image.is_open() || !output.is_open()) {
             cerr << "Error opening file!" << endl;
@@ -60,7 +59,7 @@ public:
         image.close();
         output.close();
 
-        cout << "Message encoded in " << outputFile + out << endl;
+        cout << "Message encoded in " << outputFile + out + ext << endl;
     }
 
     string decodeMessage(){
@@ -69,7 +68,7 @@ public:
         cout << "Enter file name to decode from: ";
         getline(cin, dec);
         
-        ifstream image(decode + dec, ios::binary);
+        ifstream image(decode + dec + ext, ios::binary);
 
         if (!image.is_open()) {
             cerr << "Error opening file!" << endl;
@@ -103,7 +102,7 @@ int main() {
     string message;
     int choice;
 
-    Stegano n1;
+    Steganography n1;
 
     do {
         cout << "1. Encode\n2. Decode\n3. Exit\n";
