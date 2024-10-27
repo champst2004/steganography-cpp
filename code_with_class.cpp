@@ -1,16 +1,10 @@
-//Use the concepts of OOP
-
-//Edit the code to make logs on every ruk
-
-//Ask for imput/output file name everytime
-
 #include <iostream>
 #include <fstream>
 #include <bitset>
 using namespace std;
 
-class Steganography {
-private:
+class BitManip {
+public:
     string imageFile;
     string outputFile;
 
@@ -21,12 +15,16 @@ private:
     int getLSB(char byte) {
         return byte & 1;
     }
+};
 
-public:
-    Steganography(const string &imageFile, const string &outputFile)
-        : imageFile(imageFile), outputFile(outputFile) {}
+class Stegano : public BitManip {
+    public:
+    void encodeMessage(const string &message){
+        cout << "Enter input file name: ";
+        getline(cin, imageFile);
+        cout << "Enter output file name: ";
+        getline(cin, outputFile);
 
-    void encodeMessage(const string &message) {
         ifstream image(imageFile, ios::binary);
         ofstream output(outputFile, ios::binary);
 
@@ -62,8 +60,12 @@ public:
         cout << "Message encoded in " << outputFile << endl;
     }
 
-    string decodeMessage() {
-        ifstream image(outputFile, ios::binary);
+    string decodeMessage(){
+        string decode;
+        cout << "Enter file name to decode from: ";
+        getline(cin, decode);
+
+        ifstream image(decode, ios::binary);
 
         if (!image.is_open()) {
             cerr << "Error opening file!" << endl;
@@ -88,34 +90,31 @@ public:
                 binaryMessage.clear();
             }
         }
-
         image.close();
         return message;
     }
 };
 
 int main() {
-    string imageFile = "input.bmp";
-    string outputFile = "output.bmp";
     string message;
     int choice;
 
-    Steganography steganography(imageFile, outputFile);
+    Stegano img;
 
     do {
-        printf("1. Encode\n2. Decode\n3. Exit\n");
-        printf("Enter choice: ");
+        cout << "1. Encode\n2. Decode\n3. Exit\n";
+        cout << "Enter choice: ";
         cin >> choice;
         cin.ignore();
 
         switch (choice) {
             case 1:
-                printf("Enter message: ");
+                cout << "Enter message: ";
                 getline(cin, message);
-                steganography.encodeMessage(message);
+                img.encodeMessage(message);
                 break;
             case 2:
-                cout << "The message in the image is: " << steganography.decodeMessage() << endl;
+                cout << "The message in the image is: " << img.decodeMessage() << endl;
                 break;
             case 3:
                 printf("Thank you!\n");
@@ -124,6 +123,5 @@ int main() {
                 cout << "Invalid choice" << endl;
         }
     } while (choice != 3);
-
     return 0;
 }
