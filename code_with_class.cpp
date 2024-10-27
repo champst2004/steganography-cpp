@@ -1,12 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <bitset>
+#include <cstring>
 using namespace std;
 
 class BitManip {
 public:
-    string imageFile;
-    string outputFile;
+    string imageFile = "images/inputs/";
+    string outputFile = "images/outputs/";
 
     void setLSB(char &byte, int bit) {
         byte = (byte & 0xFE) | (bit & 1);
@@ -18,15 +19,17 @@ public:
 };
 
 class Stegano : public BitManip {
-    public:
+public:
     void encodeMessage(const string &message){
+        string in;
+        string out;
         cout << "Enter input file name: ";
-        getline(cin, imageFile);
+        getline(cin, in);
         cout << "Enter output file name: ";
-        getline(cin, outputFile);
+        getline(cin, out);
 
-        ifstream image(imageFile, ios::binary);
-        ofstream output(outputFile, ios::binary);
+        ifstream image(imageFile + in, ios::binary);
+        ofstream output(outputFile + out, ios::binary);
 
         if (!image.is_open() || !output.is_open()) {
             cerr << "Error opening file!" << endl;
@@ -57,15 +60,16 @@ class Stegano : public BitManip {
         image.close();
         output.close();
 
-        cout << "Message encoded in " << outputFile << endl;
+        cout << "Message encoded in " << outputFile + out << endl;
     }
 
     string decodeMessage(){
-        string decode;
+        string decode = "images/outputs/";
+        string dec;
         cout << "Enter file name to decode from: ";
-        getline(cin, decode);
-
-        ifstream image(decode, ios::binary);
+        getline(cin, dec);
+        
+        ifstream image(decode + dec, ios::binary);
 
         if (!image.is_open()) {
             cerr << "Error opening file!" << endl;
@@ -99,7 +103,7 @@ int main() {
     string message;
     int choice;
 
-    Stegano img;
+    Stegano n1;
 
     do {
         cout << "1. Encode\n2. Decode\n3. Exit\n";
@@ -111,10 +115,10 @@ int main() {
             case 1:
                 cout << "Enter message: ";
                 getline(cin, message);
-                img.encodeMessage(message);
+                n1.encodeMessage(message);
                 break;
             case 2:
-                cout << "The message in the image is: " << img.decodeMessage() << endl;
+                cout << "The message in the image is: " << n1.decodeMessage() << endl;
                 break;
             case 3:
                 printf("Thank you!\n");
