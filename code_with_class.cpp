@@ -120,7 +120,7 @@ int main() {
                 cout << "The message in the image is: " << n1.decodeMessage() << endl;
                 break;
             case 3:
-                printf("Thank you!\n");
+                cout << "Thank you!\n";
                 break;
             default:
                 cout << "Invalid choice" << endl;
