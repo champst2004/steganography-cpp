@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <bitset>
+#include <limits>
 using namespace std;
 
 void setLSB(char &byte, int bit) {
@@ -83,11 +84,16 @@ int main() {
     string outputFile = "output.bmp";
     string message;
     int choice;
-    do{
+    do {
         printf("1. Encode\n2. Decode\n3. Exit\n");
         printf("Enter choice: ");
-        cin >> choice;
-        cin.ignore();
+        if (!(cin >> choice)) {
+            cout << "Invalid input! Please enter a number." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }    
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         switch(choice) {
             case 1:
                 printf("Enter message: ");
