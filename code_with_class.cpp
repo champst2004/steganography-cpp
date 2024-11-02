@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <bitset>
+#include <limits>
 using namespace std;
 
 class BitManip {
@@ -107,9 +108,13 @@ int main() {
     do {
         cout << "1. Encode\n2. Decode\n3. Exit\n";
         cout << "Enter choice: ";
-        cin >> choice;
-        cin.ignore();
-
+        if (!(cin >> choice)) {
+            cout << "Invalid input! Please enter a number." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }    
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         switch (choice) {
             case 1:
                 cout << "Enter message: ";
